@@ -1,0 +1,54 @@
+.todoItem {
+    display: flex;
+    align-items: center;
+    background-color: #fbf8ee;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    width: 90%;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    font-size: 1.05rem;
+}
+
+.todoItemButton {
+    width: 28px;
+    height: 28px;
+    position: relative;
+    margin: 0 15px;
+    border-radius: 50%;
+    border: none;
+}
+
+
+.todoItemButton::before {
+    cursor: pointer;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-image: linear-gradient(to bottom, #69437a, #48add9);
+}
+
+
+.todoItemButton::after {
+    cursor: pointer;
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75%;
+    height: 75%;
+    background-color: #fbf8ee;
+}
+
+.todoItemButton.todoItemButton-completed::after {
+    background-color: #99cdd1; /* Cambia el color a rojo (#ff0000) o el que desees */
+}
+
+.todoItemParagraph-completed {
+    text-decoration: line-through;
+}

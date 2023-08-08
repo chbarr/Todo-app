@@ -1,0 +1,69 @@
+.taskContainer {
+    width: 80%;
+    height: 90%;
+    grid-column: 2 / 3;
+    place-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-size: 3.5rem;
+    text-align: center;
+    margin: 0;
+    background: linear-gradient(to right, #9ec9cb, #a05843, #f08960);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: 3.5px;
+}
+
+.todoCounterHeader h2 {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.dot {
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0%{
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.dot {
+    opacity: 0;
+    animation: fadeIn 1.6s infinite;
+    animation: fadeOut 2s infinite;
+}
+
+.dot:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.dot:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.dot:nth-child(3) {
+    animation-delay: 1s;
+}

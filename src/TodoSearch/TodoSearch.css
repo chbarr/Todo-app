@@ -1,0 +1,36 @@
+.searchField {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    height: 40px;
+    margin: 0 auto;
+    border-radius: 8px;
+    background-color: #fbf8ee;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+
+.searchField input {
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 0 20px;
+    background-color: transparent;
+}
+
+.searchField button {
+    width: 15%;
+    min-width: 20px;
+    max-width: 40px;
+    border: none;
+    background-image: url('../assets/icons/lens.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-color: transparent;
+    cursor: pointer;
+    padding-right: 20px;
+}
+
+

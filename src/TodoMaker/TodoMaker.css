@@ -1,0 +1,64 @@
+.todoMaker{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 90%;
+    grid-column: 1 / 2;
+    place-self: center;
+    background-color: #fdfbf7;
+    background-image: url('../assets/img/man.png');
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: contain;
+    box-sizing: border-box;
+    padding: 0 30px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+
+    @media (min-width: 620px) and (max-width:820px) {
+        background-size: min(100px, 100%) min(130px, 100%);
+    }
+    @media (min-width: 821px) and (max-width:1220px){
+        background-size: min(320px, 100%) min(350px, 100%); 
+    }
+
+    @media (min-width: 1221px){
+        background-size: min(430px, 100%) min(450px, 100%);
+    }
+}
+.todoMaker h2{
+    font-size: 2.2rem;
+    text-align: center;
+}
+
+.todoMaker span{
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #58495a;
+}
+
+.todoMaker textarea {
+    min-height: 40px;
+    max-height: 90px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background-color: #efefef;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    padding: 0 15px;
+}
+
+.todoMaker button{
+    width: 35%;
+    height: 35px;
+    border-radius: 8px;
+    border: none;
+    max-width: 120px;
+    min-width: 90px;
+    margin: 0 auto;
+    background-color: #71357c;
+    color: #fdfbf7;
+    cursor: pointer;
+}
