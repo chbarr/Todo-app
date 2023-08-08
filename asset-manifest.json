@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/chbarr.github.io/Todo-app/static/css/main.4de547cc.css",
-    "main.js": "/chbarr.github.io/Todo-app/static/js/main.78a2835f.js",
+    "main.js": "/chbarr.github.io/Todo-app/static/js/main.7fcd1326.js",
     "static/media/man.png": "/chbarr.github.io/Todo-app/static/media/man.086c36132ac7286a3608.png",
     "index.html": "/chbarr.github.io/Todo-app/index.html",
     "main.4de547cc.css.map": "/chbarr.github.io/Todo-app/static/css/main.4de547cc.css.map",
-    "main.78a2835f.js.map": "/chbarr.github.io/Todo-app/static/js/main.78a2835f.js.map"
+    "main.7fcd1326.js.map": "/chbarr.github.io/Todo-app/static/js/main.7fcd1326.js.map"
   },
   "entrypoints": [
     "static/css/main.4de547cc.css",
-    "static/js/main.78a2835f.js"
+    "static/js/main.7fcd1326.js"
   ]
 }
