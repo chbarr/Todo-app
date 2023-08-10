@@ -8,7 +8,6 @@ import { TodoError } from '../TodoError/TodoError';
 import { EmptyTodos } from '../EmptyTodos/EmptyTodos';
 import { TodoContext } from '../TodoContext/TodoContext';
 import React from 'react'
-import { Modal } from '../Modal/Modal';
 
 function AppUI() {
     const {
@@ -16,8 +15,7 @@ function AppUI() {
         deleteTodo,
         searchedTodos,
         loading,
-        error,
-        openModal,
+        error
     } = React.useContext(TodoContext);
     return (
         <React.Fragment>
@@ -44,12 +42,6 @@ function AppUI() {
                         />))}
                 </TodoList>
             </section>
-
-            {openModal && (
-                <Modal>
-                    Funcionalidad de agregar TODO
-                </Modal>
-            )}
         </React.Fragment>
     );
 }
