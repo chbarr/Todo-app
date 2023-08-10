@@ -13,6 +13,7 @@ import { Modal } from '../Modal/Modal';
 function AppUI() {
     const {
         completeTodo,
+        deleteTodo,
         searchedTodos,
         loading,
         error,
@@ -39,6 +40,7 @@ function AppUI() {
                             text={todo.text}
                             completed={todo.completed}
                             onComplete={() => completeTodo(todo.text)}
+                            onDelete={() => deleteTodo(todo.text)}
                         />))}
                 </TodoList>
             </section>

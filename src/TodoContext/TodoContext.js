@@ -22,6 +22,12 @@ function TodoProvider({ children }) {
         foundTodo.completed = !foundTodo.completed;
         saveTodos(newTodos);
     }
+    
+    const deleteTodo = (text) => {
+        let newTodos = [...todos];
+        newTodos = newTodos.filter(todo => todo.text !== text);
+        saveTodos(newTodos);
+    }
 
     const makeTodo = (text) => {
         const newTodos = [...todos];
@@ -42,6 +48,7 @@ function TodoProvider({ children }) {
             {
                 todos,
                 completeTodo,
+                deleteTodo,
                 searchValue,
                 setSearchValue,
                 searchedTodos,

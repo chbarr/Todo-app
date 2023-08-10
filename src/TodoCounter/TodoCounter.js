@@ -17,8 +17,8 @@ function TodoCounter() {
                         <span className=" loading-text dot">.</span>
                         <span className=" loading-text dot">.</span>
                     </> :
-                    todos.length === completedTodos ? ('You rock!!')
-                        : (`Completed ${completedTodos} out of ${todos.length}`)
+                    todos.length === 0 ? 'Create your first task!' :
+                        todos.length === completedTodos ? ('You rock!!') : (`Completed ${completedTodos} out of ${todos.length}`)
                 }
             </h2>
         </div>
