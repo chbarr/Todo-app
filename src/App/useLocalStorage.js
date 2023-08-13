@@ -16,7 +16,7 @@ function useLocalStorge(itemName, initalValue) {
                 setLoading(false);
                 setError(true)
             }
-        }, 2000)
+        }, 700)
     }, [itemName, initalValue]);
 
     const saveItem = (newItem) => {

@@ -23,31 +23,28 @@ function App() {
     makerValue,
     setMakerValue
   } = useTodos();
-  
+
   return (
     <React.Fragment>
       <TodoMaker makeTodo={makeTodo} makerValue={makerValue} setMakerValue={setMakerValue} />
       <section className='taskContainer'>
         <TodoCounter todos={todos} loading={loading} />
         <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
-        <TodoList>
-          {loading && (
-            <>
-              <TodoLoading />
-              <TodoLoading />
-              <TodoLoading />
-            </>
-          )}
-          {error && <TodoError />}
-          {(!loading && searchedTodos.length === 0) && <EmptyTodos />}
-          {searchedTodos.map(todo => (
+        <TodoList
+          error={error}
+          loading={loading}
+          searchedTodos={searchedTodos}
+          onError={() => <TodoError />}
+          onLoading={() => <TodoLoading />}
+          onEmptyTodos={() => <EmptyTodos />}
+          render={() => todo => (
             <TodoItem key={todo.text}
               text={todo.text}
               completed={todo.completed}
               onComplete={() => completeTodo(todo.text)}
               onDelete={() => deleteTodo(todo.text)}
-            />))}
-        </TodoList>
+            />)}
+        />
       </section>
     </React.Fragment>
   );
