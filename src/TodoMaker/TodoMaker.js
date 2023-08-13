@@ -1,10 +1,7 @@
 import React from 'react'
 import './TodoMaker.css'
-import { TodoContext } from '../TodoContext/TodoContext';
 
-function TodoMaker() {
-    const { makeTodo, makerValue, setMakerValue } = React.useContext(TodoContext);
-
+function TodoMaker({ makeTodo, makerValue, setMakerValue }) {
     return (
         <section className='todoMaker'>
             <h2>Create new task</h2>
