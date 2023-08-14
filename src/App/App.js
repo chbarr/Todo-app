@@ -8,6 +8,7 @@ import { TodoLoading } from '../TodoLoading/TodoLoading';
 import { TodoError } from '../TodoError/TodoError';
 import { EmptyTodos } from '../EmptyTodos/EmptyTodos';
 import React from 'react';
+import { EmptySearchTodos } from '../EmptySearchTodos/EmptySearchTodos';
 
 function App() {
   const {
@@ -31,12 +32,15 @@ function App() {
         <TodoCounter todos={todos} loading={loading} />
         <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
         <TodoList
+          todos={todos}
           error={error}
           loading={loading}
           searchedTodos={searchedTodos}
+          searchValue={searchValue}
           onError={() => <TodoError />}
           onLoading={() => <TodoLoading />}
           onEmptyTodos={() => <EmptyTodos />}
+          onEmptySearchTodos={() => <EmptySearchTodos searchValue={searchValue} />}
           render={() => todo => (
             <TodoItem key={todo.text}
               text={todo.text}
@@ -44,7 +48,17 @@ function App() {
               onComplete={() => completeTodo(todo.text)}
               onDelete={() => deleteTodo(todo.text)}
             />)}
-        />
+        >
+          {
+            todo => (
+              <TodoItem key={todo.text}
+                text={todo.text}
+                completed={todo.completed}
+                onComplete={() => completeTodo(todo.text)}
+                onDelete={() => deleteTodo(todo.text)}
+              />)
+          }
+        </TodoList>
       </section>
     </React.Fragment>
   );
