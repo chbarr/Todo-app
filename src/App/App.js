@@ -38,7 +38,13 @@ function App() {
           searchedTodos={searchedTodos}
           searchValue={searchValue}
           onError={() => <TodoError />}
-          onLoading={() => <TodoLoading />}
+          onLoading={() => (
+            <>
+              <TodoLoading />
+              <TodoLoading />
+              <TodoLoading />
+            </>
+          )}
           onEmptyTodos={() => <EmptyTodos />}
           onEmptySearchTodos={() => <EmptySearchTodos searchValue={searchValue} />}
           render={() => todo => (
@@ -49,6 +55,7 @@ function App() {
               onDelete={() => deleteTodo(todo.text)}
             />)}
         >
+
           {
             todo => (
               <TodoItem key={todo.text}

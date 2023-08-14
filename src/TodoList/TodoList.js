@@ -3,7 +3,7 @@ import './TodoList.css'
 
 function TodoList(props) {
     return (
-        <section className="TodoList-container">
+        <section className="todoList-container">
             {props.error && props.onError()}
             {props.loading && props.onLoading()}
             {(!props.loading && props.todos.length === 0) && props.onEmptyTodos()}
