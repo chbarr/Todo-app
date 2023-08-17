@@ -30,7 +30,7 @@ function App() {
       <TodoMaker makeTodo={makeTodo} makerValue={makerValue} setMakerValue={setMakerValue} />
       <section className='taskContainer'>
         <TodoCounter todos={todos} loading={loading} />
-        <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
+        <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} loading={loading}/>
         <TodoList
           todos={todos}
           error={error}

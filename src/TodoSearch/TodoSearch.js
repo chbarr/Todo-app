@@ -1,6 +1,6 @@
 import React from 'react'
 import './TodoSearch.css'
-function TodoSearch({ searchValue, setSearchValue }) {
+function TodoSearch({ searchValue, setSearchValue, loading}) {
     return (
         <div className='searchField'>
             <input
@@ -9,6 +9,7 @@ function TodoSearch({ searchValue, setSearchValue }) {
                 onChange={(event) => {
                     setSearchValue(event.target.value);
                 }}
+                disabled={loading}
             />
             <button></button>
         </div>
