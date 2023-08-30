@@ -6,7 +6,9 @@ function useTodos() {
         item: todos,
         saveItem: saveTodos,
         loading,
-        error } = useLocalStorge('TODOS_V1', []);
+        error,
+        sincronizeItem: sincronizeTodos
+    } = useLocalStorge('TODOS_V1', []);
 
     const [searchValue, setSearchValue] = React.useState('');
     const searchedTodos = todos.filter(todo =>
@@ -55,7 +57,8 @@ function useTodos() {
             setOpenModal,
             makeTodo,
             makerValue,
-            setMakerValue
+            setMakerValue,
+            sincronizeTodos
         }
     );
 }

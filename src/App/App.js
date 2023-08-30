@@ -9,6 +9,7 @@ import { TodoError } from '../TodoError/TodoError';
 import { EmptyTodos } from '../EmptyTodos/EmptyTodos';
 import React from 'react';
 import { EmptySearchTodos } from '../EmptySearchTodos/EmptySearchTodos';
+import { StorageChangeAlertWithListener } from '../StorageChangeAlert/StorageChangeAlert';
 
 function App() {
   const {
@@ -22,7 +23,8 @@ function App() {
     setSearchValue,
     makeTodo,
     makerValue,
-    setMakerValue
+    setMakerValue,
+    sincronizeTodos
   } = useTodos();
 
   return (
@@ -30,7 +32,7 @@ function App() {
       <TodoMaker makeTodo={makeTodo} makerValue={makerValue} setMakerValue={setMakerValue} />
       <section className='taskContainer'>
         <TodoCounter todos={todos} loading={loading} />
-        <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} loading={loading}/>
+        <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} loading={loading} />
         <TodoList
           todos={todos}
           error={error}
@@ -67,6 +69,9 @@ function App() {
           }
         </TodoList>
       </section>
+      <StorageChangeAlertWithListener
+        sincronize={sincronizeTodos}
+      />
     </React.Fragment>
   );
 }
