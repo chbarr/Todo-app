@@ -4,7 +4,8 @@ function TodoItem(
         completed,
         text,
         onComplete,
-        onDelete
+        onDelete,
+        onEdit
     }
 ) {
     return (
@@ -14,6 +15,10 @@ function TodoItem(
                 onClick={onComplete}
             ></button>
             <p className={`${completed && "todoItemParagraph-completed"}`}>{text}</p>
+            <button
+                className={'todoItemButton todoItemButton-edit'}
+                onClick={onEdit}
+            ></button>
             <button
                 className={'todoItemButton todoItemButton-delete'}
                 onClick={onDelete}

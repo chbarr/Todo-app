@@ -23,7 +23,7 @@
     width: 12px;
     height: 12px;
     background-color: transparent;
-    background-image: url("../assets/icons/x.png");
+    background-image: url("../../assets/icons/x.png");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -64,9 +64,20 @@
 }
 
 .todoItemButton.todoItemButton-completed::after {
-    background-color: #99cdd1; /* Cambia el color a rojo (#ff0000) o el que desees */
+    background-color: #99cdd1;
 }
 
 .todoItemParagraph-completed {
     text-decoration: line-through;
+}
+
+.todoItemButton-edit{
+    width: 16px;
+    height: 16px;
+    background-color: transparent;
+    background-image: url("../../assets/icons/edit.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
 }

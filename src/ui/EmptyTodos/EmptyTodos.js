@@ -1,6 +1,6 @@
 import React from 'react'
 import './EmptyTodos.css'
-import emptyFolder from '../assets/icons/empty.png'; 
+import emptyFolder from '../../assets/icons/empty.png'; 
 
 function EmptyTodos() {
     return (

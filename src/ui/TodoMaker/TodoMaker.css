@@ -6,7 +6,7 @@
     grid-column: 1 / 2;
     place-self: center;
     background-color: #fdfbf7;
-    background-image: url('../assets/img/man.png');
+    background-image: url('../../assets/img/man.png');
     background-repeat: no-repeat;
     background-position: center bottom;
     background-size: contain;

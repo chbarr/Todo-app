@@ -8,7 +8,7 @@ function useTodos() {
         loading,
         error,
         sincronizeItem: sincronizeTodos
-    } = useLocalStorge('TODOS_V1', []);
+    } = useLocalStorge('TODOS_V2', []);
 
     const [searchValue, setSearchValue] = React.useState('');
     const searchedTodos = todos.filter(todo =>
@@ -16,28 +16,41 @@ function useTodos() {
             includes(searchValue.toLocaleLowerCase())
     );
 
-    const completeTodo = (text) => {
+    const completeTodo = (id) => {
         const newTodos = [...todos];
-        const foundTodo = newTodos.find(todo => todo.text == text);
+        const foundTodo = newTodos.find(todo => todo.id == id);
         foundTodo.completed = !foundTodo.completed;
         saveTodos(newTodos);
     }
 
-    const deleteTodo = (text) => {
+    const deleteTodo = (id) => {
         let newTodos = [...todos];
-        newTodos = newTodos.filter(todo => todo.text !== text);
+        newTodos = newTodos.filter(todo => todo.id !== id);
         saveTodos(newTodos);
     }
 
     const makeTodo = (text) => {
+        const id = newTodoId(todos);
         const newTodos = [...todos];
         newTodos.push(
             {
                 text: text,
-                completed: false
+                completed: false,
+                id
             }
         )
         saveTodos(newTodos);
+    }
+
+    const editTodo = (id, text) => {
+        const todoIndex = todos.findIndex(todo => todo.id === id);
+        const newTodos = [...todos];
+        newTodos[todoIndex].text = text;
+        saveTodos(newTodos);
+    }
+
+    const getTodo = (id) => {
+        return todos.find(todo => todo.id === id);
     }
 
     const [openModal, setOpenModal] = React.useState(true);
@@ -48,6 +61,8 @@ function useTodos() {
             todos,
             completeTodo,
             deleteTodo,
+            editTodo,
+            getTodo,
             searchValue,
             setSearchValue,
             searchedTodos,
@@ -63,4 +78,8 @@ function useTodos() {
     );
 }
 
+function newTodoId(todoList) {
+    let todoIds = todoList.map(todo => todo.id);
+    return Math.max(todoList.length === 0 ? 0 : [...todoIds]) + 1;
+}
 export { useTodos }
